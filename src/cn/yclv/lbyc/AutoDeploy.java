@@ -14,9 +14,9 @@ public class AutoDeploy {
 	public static String buildName = "build.js";
 	public static void main(String[] args) {
 		rewriteIndex(CommonConstant.SCRIPT_PATTERN_BUILD, "build");
-		System.out.println(buildName);
+		rewriteIndex(CommonConstant.SCRIPT_PATTERN_VENDOR, "vendors");
 		renameBuildFile();
-//		rewriteIndex(CommonConstant.SCRIPT_PATTERN_VENDOR, "vendor");
+		rewritePackageJson();
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class AutoDeploy {
 		if(!buildName.equals("build.js")){
 			File file = new File(CommonConstant.BUILD_JS_PATH);
 			file.renameTo(new File(CommonConstant.BUILD_JS_PATH + new Random().nextInt(10000)));
-			File randomBuildFile = new File(CommonConstant.LBYC_TEST + "js\\" + buildName);
+			File randomBuildFile = new File(CommonConstant.LBYC_STATIC_PATH + "js\\" + buildName);
 			randomBuildFile.renameTo(new File(CommonConstant.BUILD_JS_PATH));
 		}
 	}
@@ -58,15 +58,17 @@ public class AutoDeploy {
 	
 	
 	/**
-	 * 自动化index.html
+	 * 自动化package.html
 	 */
-	public static void rewritePackageJson(String pattern, String str) {
-		String fileText = FileUtil.readTxt(CommonConstant.PACKAGE_JSON_PATH);
-		Pattern p = Pattern.compile(pattern);
-		Matcher matcher = p.matcher(fileText);
-		while(matcher.find()){
-			String result = matcher.group(0);
-			String subResult = result.substring(result.indexOf(str), result.length());
+	public static void rewritePackageJson() {
+		try {
+			String fileText = FileUtil.readTxt(CommonConstant.PACKAGE_JSON_PATH);
+			int hostIndex = fileText.indexOf("host");
+			String substr = fileText.substring(hostIndex, fileText.indexOf("\",", hostIndex));
+			String newFileText = fileText.replace(substr, "host " + Inet4Address.getLocalHost().getHostAddress());
+			FileUtil.writeToFile(newFileText, CommonConstant.PACKAGE_JSON_PATH);
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
 		}
 	}
 	

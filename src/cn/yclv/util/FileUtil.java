@@ -39,10 +39,10 @@ public class FileUtil {
 	 * @param string
 	 * @param desFile
 	 */
-	public static void writeToFile(String str, String desFile) {
+	public static void writeToFile(String str, String desFileStr) {
 		BufferedWriter bWriter = null;
 		try {
-			bWriter = new BufferedWriter(new FileWriter(new File(desFile)));
+			bWriter = new BufferedWriter(new FileWriter(new File(desFileStr)));
 			bWriter.write(str.toString());
 			bWriter.close();
 		} catch (Exception e) {

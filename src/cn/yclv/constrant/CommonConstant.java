@@ -3,7 +3,9 @@ package cn.yclv.constrant;
 public interface CommonConstant {
 	
 	String LBYC_STATIC_PATH = "E:\\java\\luban\\rest\\src\\main\\resources\\static\\";
+	
 	String LBYC_TEST = "C:\\Users\\Administrator\\Desktop\\备份\\";
+	String PACKAGE_TEST_PATH = LBYC_TEST + "package.json";
 	
 	//匹配script标签的正则
 	String SCRIPT_PATTERN = "<script[^>]*?>[\\s\\S]*?<\\/script>";
@@ -20,5 +22,5 @@ public interface CommonConstant {
 	//package.json绝对路径
 	String PACKAGE_JSON_PATH = LBYC_STATIC_PATH + "package.json";
 	
-	String BUILD_JS_PATH = LBYC_TEST + "js\\build.js";
+	String BUILD_JS_PATH = LBYC_STATIC_PATH + "js\\build.js";
 }
