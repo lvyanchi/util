@@ -30,16 +30,16 @@ public class AutoDeploy {
 			String result = matcher.group(0);
 			String subResult = result.substring(result.indexOf(str), result.length());
 			String randomBuild = subResult.substring(0, subResult.indexOf(".js") + 3);
-			buildName = randomBuild;
+			if(!randomBuild.equals("vendors.js")){
+				buildName = randomBuild;
+			}
 			System.out.println(randomBuild);
-			if(subResult.length() > 20){
-				try {
-					String hostAddress = Inet4Address.getLocalHost().getHostAddress();
-					String newFileText = fileText.replace(result, "<script type=\"text/javascript\" src=\"http://" + hostAddress + ":8080/js/" + str + ".js\"></script>");
-					FileUtil.writeToFile(newFileText, CommonConstant.LBYC_INDEX_PATH);
-				} catch (UnknownHostException e) {
-					e.printStackTrace();
-				}
+			try {
+				String hostAddress = Inet4Address.getLocalHost().getHostAddress();
+				String newFileText = fileText.replace(result, "<script type=\"text/javascript\" src=\"http://" + hostAddress + ":8080/js/" + str + ".js\"></script>");
+				FileUtil.writeToFile(newFileText, CommonConstant.LBYC_INDEX_PATH);
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
 			}
 		}
 	}
@@ -50,7 +50,7 @@ public class AutoDeploy {
 		if(!buildName.equals("build.js")){
 			File file = new File(CommonConstant.BUILD_JS_PATH);
 			file.renameTo(new File(CommonConstant.BUILD_JS_PATH + new Random().nextInt(10000)));
-			File randomBuildFile = new File(CommonConstant.LBYC_STATIC_PATH + "js\\" + buildName);
+			File randomBuildFile = new File(CommonConstant.LBYC_STATIC_PATH + "js/" + buildName);
 			randomBuildFile.renameTo(new File(CommonConstant.BUILD_JS_PATH));
 		}
 	}
