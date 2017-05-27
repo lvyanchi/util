@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 public class FileUtil {
+	//
 
 	/**
 	 * 读取txt文档，保存成string
