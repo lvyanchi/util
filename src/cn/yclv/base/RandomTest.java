@@ -5,10 +5,10 @@ import java.util.Random;
 
 public class RandomTest {
 	public static void main(String[] args) {
-//		Random random = new Random();
-//		
-//		int nextInt = random.nextInt(47);
-////		System.out.println(nextInt);
+		Random random = new Random();
+		
+		int nextInt = random.nextInt(100000000);
+		System.out.println(nextInt);
 //		
 //		int a = 1;
 ////		a++;
@@ -33,9 +33,9 @@ public class RandomTest {
 //		}
 //		System.out.println(Arrays.toString(arr2));
 		
-		viaParam(1, 2, "yclv");
-		viaParam(new Integer[]{1,3,5});
-		viaParam(new String[]{"aa","bb","cc"});
+//		viaParam(1, 2, "yclv");
+//		viaParam(new Integer[]{1,3,5});
+//		viaParam(new String[]{"aa","bb","cc"});
 		
 	}
 	
