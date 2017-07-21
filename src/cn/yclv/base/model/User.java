@@ -31,5 +31,16 @@ public class User {
 		}
 		return false;
 	}
+	
+	
+	public boolean objValIsNull(Object obj) {
+		if(obj instanceof User){
+			User user = (User)obj;
+			if((user.getId() == null) && user.getName()== null){
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

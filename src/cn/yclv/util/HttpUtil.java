@@ -47,21 +47,21 @@ public class HttpUtil {
 //		Long gtk = QQUtil.getGTK("@lxG2HhDgq");
 //		Long bkn = QQUtil.getBkn("n1NOV4H97md6kaQY97RHOhDW28ZTTdmewxWtFPFg2jE_");
 		
-//		Map<String, String> paramsMap = new HashMap<String, String>();
-//		paramsMap.put("gc", "161556918");
-//		paramsMap.put("st", "1");
-//		paramsMap.put("end", "200");
-//		paramsMap.put("sort", "0");
-//		paramsMap.put("bkn", "1516650740");
-//		
-//		Map<String, String> headerMap = new HashMap<String, String>();
-//		headerMap.put("Cookie", "RK=lH2biZzOYi; pgv_pvi=9398909952; pgv_si=s5268871168; _qpsvr_localtk=0.19207234714815336; ptisp=ctc; ptcz=b7f05457103eb66c4902ce2622b24220a2e5dacca29905474c26a3a1652af40b; pt2gguin=o0383041699; uin=o0383041699; skey=@ZdDeYuQ27; p_uin=o0383041699; p_skey=D5-fRMGiUOXMwTu6Wml*WHTPwHj7gaDzNhoGW4*vaYk_; pt4_token=k9S2tPZmMYb1HpY8tLYEVkN9hb2hoROr3toqbAwr4oQ_");
-//		String responseResult = buildPostOfParam("http://qun.qq.com/cgi-bin/qun_mgr/search_group_members", paramsMap, headerMap);
-//		System.out.println(responseResult);
 		Map<String, String> paramsMap = new HashMap<String, String>();
-		paramsMap.put("ticket", "aabb");
-		String responseResult = buildPostOfParam("http://localhost/customer/third/zzw/validate", paramsMap);
+		paramsMap.put("gc", "245854112");
+		paramsMap.put("st", "1");
+		paramsMap.put("end", "1000");
+		paramsMap.put("sort", "0");
+		paramsMap.put("bkn", "415862199");
+		
+		Map<String, String> headerMap = new HashMap<String, String>();
+		headerMap.put("Cookie", "RK=lH2biZzOYi; _qpsvr_localtk=0.05784163728124181; pgv_pvi=9110548480; pgv_si=s9757825024; verifysession=h01187ce47ceb06786b22fa68bcb77bf97b7c7ddfeae3ed8f78b4a10bab92fb37fa947055db8a46f0ae; pac_uid=1_383041699; pgv_info=ssid=s6501896064; pgv_pvid=4775467852; o_cookie=383041699; ptisp=ctc; ptcz=1e54129e0f3c60d64337c87c642682aa6b00845096f38ae402edc2cdb2e37b62; pt2gguin=o0383041699; uin=o0383041699; skey=@nYvJqIHTU; p_uin=o0383041699; p_skey=*TFgRACxL2sLJbA1K6zmpgYrtIDAUQjuqJkRqawct-c_; pt4_token=M32fK1mWrScypyfVS18vH3mdOM1TW0gncLfyWmy29Cc_");
+		String responseResult = buildPostOfParam("http://qun.qq.com/cgi-bin/qun_mgr/search_group_members", paramsMap, headerMap);
 		System.out.println(responseResult);
+//		Map<String, String> paramsMap = new HashMap<String, String>();
+//		paramsMap.put("ticket", "aabb");
+//		String responseResult = buildPostOfParam("http://localhost/customer/third/zzw/validate", paramsMap);
+//		System.out.println(responseResult);
 	}
 
 

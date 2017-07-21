@@ -36,7 +36,7 @@ public class AutoDeploy {
 			System.out.println(randomBuild);
 			try {
 				String hostAddress = Inet4Address.getLocalHost().getHostAddress();
-				String newFileText = fileText.replace(result, "<script type=\"text/javascript\" src=\"http://" + hostAddress + ":8080/js/" + str + ".js\"></script>");
+				String newFileText = fileText.replace(result, "<script type=\"text/javascript\" src=\"http://" + hostAddress + ":8090/js/" + str + ".js\"></script>");
 				FileUtil.writeToFile(newFileText, CommonConstant.LBYC_INDEX_PATH);
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
