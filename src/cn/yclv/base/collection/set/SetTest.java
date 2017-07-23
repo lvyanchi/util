@@ -6,9 +6,21 @@ import java.util.Set;
 public class SetTest {
 	
 	public static void main(String[] args) {
-		getMaintainsByOrder();
+		hashSetTest();
 	}
 
+	
+	public static void hashSetTest(){
+		Set<Integer> intSet = new HashSet<Integer>();
+		intSet.add(3);
+		intSet.add(1);
+		intSet.add(5);
+		intSet.add(8899);
+		System.out.println(intSet.toString());
+	}
+	
+	
+	
 	private static String getMaintainsByOrder() {
 		Set<String> daBaoYangSet = new HashSet<String>();
 		daBaoYangSet.add("机油");
