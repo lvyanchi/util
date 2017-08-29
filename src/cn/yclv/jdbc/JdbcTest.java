@@ -5,8 +5,6 @@ import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.junit.Test;
-
 import com.mysql.jdbc.Connection;
 
 import cn.yclv.util.JdbcUtil;
