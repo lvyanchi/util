@@ -70,7 +70,7 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>cn.yclv.third.sftp.SFTPTest</mainClass>
+									<mainClass>cn.yclv.third.sftp.SFTPMain</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>

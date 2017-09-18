@@ -25,4 +25,6 @@ public interface BaseConst {
 	String BUILD_JS_PATH = LBYC_STATIC_PATH + "js/build.js";
 	
 	String HOST_CONFIG = "E:\\java\\yclv\\config\\host\\host.properties";;
+	String MANYJSQ_WAR_PATH = "E:\\java\\yclv\\manyjsq\\target\\manyjsq-1.0.war";
+	String MANYJSQ_SERVER_PATH = "/usr/java/apache-tomcat-8.0.45/webapps-manyjsq";
 }
