@@ -3,6 +3,9 @@ package cn.yclv.base.model;
 public class Person {
 	private String firstName, lastName, job, gender;
 	private int salary, age;
+	
+	public Person(){};
+	
 	public Person(String firstName, String lastName, String job, String gender, int salary, int age) {
 		super();
 		this.firstName = firstName;

@@ -1,4 +1,4 @@
-package cn.yclv.mybatis;
+package cn.yclv.frame.mybatis;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 

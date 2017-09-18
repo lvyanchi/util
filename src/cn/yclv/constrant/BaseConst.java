@@ -1,6 +1,6 @@
 package cn.yclv.constrant;
 
-public interface CommonConstant {
+public interface BaseConst {
 	
 	String LBYC_STATIC_PATH = "E:/java/luban/rest/src/main/resources/static/";
 	
@@ -23,4 +23,6 @@ public interface CommonConstant {
 	String PACKAGE_JSON_PATH = LBYC_STATIC_PATH + "package.json";
 	
 	String BUILD_JS_PATH = LBYC_STATIC_PATH + "js/build.js";
+	
+	String HOST_CONFIG = "E:\\java\\yclv\\config\\host\\host.properties";;
 }

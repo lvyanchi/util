@@ -11,6 +11,7 @@ public class SetTest {
 
 	
 	public static void hashSetTest(){
+		System.out.println("jar 执行了");
 		Set<Integer> intSet = new HashSet<Integer>();
 		intSet.add(3);
 		intSet.add(1);
