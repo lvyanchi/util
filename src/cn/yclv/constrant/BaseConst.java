@@ -25,6 +25,15 @@ public interface BaseConst {
 	String BUILD_JS_PATH = LBYC_STATIC_PATH + "js/build.js";
 	
 	String HOST_CONFIG = "E:\\java\\yclv\\config\\host\\host.properties";;
-	String MANYJSQ_WAR_PATH = "E:\\java\\yclv\\manyjsq\\target\\manyjsq-1.0.war";
-	String MANYJSQ_SERVER_PATH = "/usr/java/apache-tomcat-8.0.45/webapps-manyjsq";
+	String MANYJSQ_WAR_FILE = "E:\\java\\yclv\\manyjsq\\target\\manyjsq.war-1.0";
+	String MANYJSQ_SERVER_FILE = "/usr/java/apache-tomcat-8.0.45/webapps-manyjsq/manyjsq.war-1.0";
+	
+	String LBYCSITE_WAR_FILE = "E:\\java\\lbyc-site\\lbyc-website\\target\\lbyc-website.war-1.0";
+	String LBYCSITE_SERVER_FILE = "/root/test/apache-tomcat-8.0.26/webapps/lbyc-website.war-1.0";
+	
+	String ADMIN_WAR_FILE = "E:\\java\\luban\\admin\\target\\admin.jar-1.0";
+	String ADMIN_SERVER_FILE = "/root/lbyc-release/admin.jar-1.0";
+	
+	String REST_WAR_FILE = "E:\\java\\luban\\rest\\target\\rest.jar-1.0";
+	String REST_SERVER_FILE = "/root/lbyc-release/rest.jar-1.0";
 }

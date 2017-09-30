@@ -5,10 +5,14 @@ import java.util.Map;
 
 public class HashCodeTest {
 	public static void main(String[] args) {
-//		stringHashCode();
-		intHashCode();
+//		finalTest();
 	}
 	
+	
+	void finalTest(){
+		final int i = 5;
+//		i = 6;
+	}
 	
 	static void stringHashCode(){
 		String a = "1";

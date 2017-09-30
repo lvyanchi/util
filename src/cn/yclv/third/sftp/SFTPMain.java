@@ -26,14 +26,16 @@ public class SFTPMain {
 	private static final String hostRest = PropHelper.loadProp(BaseConst.HOST_CONFIG, "hostRest");
 	private static final String usernameRest = PropHelper.loadProp(BaseConst.HOST_CONFIG, "usernameRest");
 	private static final String passwordRest = PropHelper.loadProp(BaseConst.HOST_CONFIG, "passwordRest");
-
+	
     public SFTPChannel getSFTPChannel() {
         return new SFTPChannel();
     }
 
     public static void main(String[] args){
-    	uploadToCalcServer(BaseConst.MANYJSQ_WAR_PATH, BaseConst.MANYJSQ_SERVER_PATH);
-//    	uploadToTestServer("E:\\java\\select.html", "/root/code/select.html");
+//    	uploadToCalcServer(BaseConst.MANYJSQ_WAR_FILE, BaseConst.MANYJSQ_SERVER_FILE);
+//    	uploadToSiteServer(BaseConst.LBYCSITE_WAR_FILE, BaseConst.LBYCSITE_SERVER_FILE);
+//    	uploadToRestServer(BaseConst.ADMIN_WAR_FILE, BaseConst.ADMIN_SERVER_FILE);
+    	uploadToRestServer(BaseConst.REST_WAR_FILE, BaseConst.REST_SERVER_FILE);
     }
     
     

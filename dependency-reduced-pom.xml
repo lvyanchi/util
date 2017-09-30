@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>cn.yclv.util</groupId>
   <artifactId>util</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -19,7 +19,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>cn.yclv.third.sftp.SFTPTest</mainClass>
+                  <mainClass>cn.yclv.third.sftp.SFTPMain</mainClass>
                 </transformer>
               </transformers>
             </configuration>
